@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Security.Models;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Security
 {
@@ -26,6 +29,9 @@ namespace Security
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddDbContextPool<SecurityContext>(opt => 
+                opt.UseMySQL(Configuration.GetConnectionString("DefaultConnection"))); // Entity, mysql.data required for .usemysql
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
