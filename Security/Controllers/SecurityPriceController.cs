@@ -46,10 +46,13 @@ namespace Security.Controllers
         [HttpPost]
         public async Task<IActionResult> PostSecurityPrice([FromBody] SecurityPrice newSecurityPrice)
         {
+            //better checks for empty body. Need a SecurityID --> from client
             if (String.IsNullOrEmpty(newSecurityPrice.Date.ToString())) 
                 return StatusCode(400, "Must provide security price date.");
             if (String.IsNullOrEmpty(newSecurityPrice.EndDayPrice.ToString())) 
                 return StatusCode(400, "Must provide security price amount.");
+            if (String.IsNullOrEmpty(newSecurityPrice.SecurityId.ToString())) 
+                return StatusCode(400, "Must provide security ID.");
 
             try
             {    // todo could check for that not already existing..

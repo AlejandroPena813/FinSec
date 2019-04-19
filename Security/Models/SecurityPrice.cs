@@ -13,8 +13,7 @@ namespace Security.Models
         [JsonIgnore]
         public Security Security { get; set; } // this is ignored in db creation
         
-        [Key]
-        [JsonIgnore]
+        [Key] // need id in client for unique [JsonIgnore]
         public Int32 Id { get; set; }
         
         public double EndDayPrice { get; set; }

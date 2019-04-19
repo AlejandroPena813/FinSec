@@ -11,8 +11,7 @@ namespace Security.Models
     public class Security
     {
         // todo [required] ?
-        [Key]
-        [JsonIgnore]
+        [Key] //   Wont use bc need for patch     [JsonIgnore]
         public Int32 Id { get; set; } // auto increment in DB
         
         public string SecurityName { get; set; } // 25 char

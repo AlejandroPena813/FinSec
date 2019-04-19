@@ -58,7 +58,7 @@ namespace Security.Controllers
 
         [HttpPost]
         public async Task<IActionResult> PostSecurity([FromBody] Models.Security newSecurity)
-        {   // could turn this into function in service file--> reusable
+        {   // could turn this into function in service file--> reusable. Can receive array of prices, but shouldnt
             if (String.IsNullOrEmpty(newSecurity.SecurityName)) 
                 return StatusCode(400, "Must provide security name.");
             if (String.IsNullOrEmpty(newSecurity.ISIN)) 
@@ -83,7 +83,7 @@ namespace Security.Controllers
         public async Task<IActionResult> UpdateSecurity([FromBody] Models.Security updatedSecurity)
         { //todo edit this update for proper fields.
           //Could add prices here, but bad practice
-            if ( String.IsNullOrEmpty(updatedSecurity.Id.ToString()) )
+            if ( String.IsNullOrEmpty(updatedSecurity.Id.ToString()) ) // this needs better detection
                 return StatusCode(400, "Must provide id");
             try
             {
@@ -121,7 +121,7 @@ namespace Security.Controllers
                 
                 _securityContext.Securities.Remove(security);
                 _securityContext.SecurityPrices
-                    .RemoveRange(_securityContext.SecurityPrices.Where(price => price.SecurityId == security.Id)); // cascadeOnDelete not working EF, via DB query must be careful
+                    .RemoveRange(_securityContext.SecurityPrices.Where(price => price.SecurityId == security.Id)); // cascadeOnDelete not working EF or via DB query must be careful
                 await _securityContext.SaveChangesAsync();
                 
                 return new OkObjectResult($"Deleted {security.SecurityName}");
