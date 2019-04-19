@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-// todo Nice to have: Angular graphs generator of prices, admin sign ins for 'official' updates. Clean UI..
-// Authentication/roles HttpContext, service token?, env appsettings...Twilio API example
+// todo Nice to have: Angular graphs generator of prices, admin sign ins for 'official' updates. Clean UI graph w price info tooltip..
+// perhaps caching? or front-end storage of info(redux/local storage). 
+// Authentication/roles HttpContext, service token?, env appsettings...Twilio API example. excel spreadsheet input to update large past data. Could have more reusable functions, such as repetitive checks in securityController. getSecurityPrices() --> for future more detailed price view?
 namespace Security.Models
 {
     public class Security
@@ -21,5 +22,6 @@ namespace Security.Models
         public string Country { get; set; } // 25 char
         
         public List<SecurityPrice> DailyPrices { get; set; } // dont actually rep in DB
+        // todo DateCreatedField?
     }
 }

@@ -16,15 +16,9 @@ namespace Security.Models
             // call base 
             base.OnModelCreating(modelBuilder); 
             
-            // modelBuilder.Entity<SecurityPrice>()
-
             modelBuilder.Entity<Security>()
-                .HasMany(u => u.DailyPrices);
-//                .ToTable("Securities"); // custom
+                .HasMany(u => u.DailyPrices); // todo .CascadeOnDelete()
 
-//            modelBuilder.Entity<To do>()
-//                .Property(p => p.IsComplete)
-//                .HasColumnType("bit"); //mysql stores bit, c# type is bool
         }
     }
     
