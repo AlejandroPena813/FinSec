@@ -1,22 +1,22 @@
 import {SecurityPrice} from './SecurityPrice';
 
 export class Security {
-  Id: number;
-  SecurityName: string; // 25 char
-  ISIN: string; // 12 char alphanumeric
-  Country: string; // 25 char
-  DailyPrices?: SecurityPrice[];
+  id: number;
+  securityName: string; // 25 char
+  isin: string; // 12 char alphanumeric
+  country: string; // 25 char
+  dailyPrices?: SecurityPrice[];
 
   constructor(data: Security) {
-    this.Id = data.Id;
-    this.SecurityName = data.SecurityName;
-    this.ISIN = data.ISIN;
-    this.Country = data.Country;
-    this.DailyPrices = []; // = data.DailyPrices;
+    this.id = data.id;
+    this.securityName = data.securityName;
+    this.isin = data.isin;
+    this.country = data.country;
+    this.dailyPrices = []; // = data.dailyPrices;
 
-    if (data.DailyPrices) {
-      for (const price of data.DailyPrices) {
-        this.DailyPrices.push(price);
+    if (data.dailyPrices) {
+      for (const price of data.dailyPrices) {
+        this.dailyPrices.push(price);
       }
     }
 

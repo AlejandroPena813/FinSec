@@ -1,14 +1,14 @@
 export class SecurityPrice {
-  Id: number;
-  SecurityId: number;
-  EndDayPrice: number;
-  Date: Date;
+  id: number;
+  securityId: number;
+  endDayPrice: number;
+  date: Date;
 
   constructor(data: SecurityPrice) {
-    this.Id = data.Id;
-    this.SecurityId = data.SecurityId;
-    this.EndDayPrice = data.EndDayPrice;
-    this.Date = data.Date;
+    this.id = data.id;
+    this.securityId = data.securityId;
+    this.endDayPrice = data.endDayPrice;
+    this.date = data.date;
   }
 
 }
