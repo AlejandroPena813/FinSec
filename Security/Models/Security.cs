@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
 // todo Nice to have: Angular graphs generator of prices, admin sign ins for 'official' updates. Clean UI graph w price info tooltip..
-// perhaps caching? or front-end storage of info(redux/local storage). 
+// perhaps caching? or front-end storage of info(redux/local storage). Unit/e2eTesting/Linting
 // Authentication/roles HttpContext, service token?, env appsettings...Twilio API example. excel spreadsheet input to update large past data. Could have more reusable functions, such as repetitive checks in securityController. getSecurityPrices() --> for future more detailed price view?
 namespace Security.Models
 {

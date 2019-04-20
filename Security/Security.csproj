@@ -12,5 +12,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Client" />
+    <Folder Include="Client\service-client\src\app\components" />
+    <Folder Include="Client\service-client\src\app\models" />
+    <Folder Include="Client\service-client\src\app\services" />
   </ItemGroup>
 </Project>
