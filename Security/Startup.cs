@@ -28,6 +28,16 @@ namespace Security
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors (options => { // CRUCIAL for Angular access, locally or dev
+                options.AddPolicy ("AllowAll",
+                    build => {
+                        build.AllowAnyOrigin ();
+                        build.AllowAnyMethod ();
+                        build.AllowAnyHeader ();
+                        build.AllowCredentials ();
+                    });
+            });
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContextPool<SecurityContext>(opt => 
@@ -37,6 +47,8 @@ namespace Security
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseCors ("AllowAll");   // todo make more specific from client url?
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
