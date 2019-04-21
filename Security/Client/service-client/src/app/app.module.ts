@@ -8,6 +8,8 @@ import { SecurityService } from './services/security.service';
 import { SecurityListComponent } from './components/security-list/security-list.component';
 import { SecurityCardComponent } from './components/security-list/security-card/security-card.component';
 import { SecurityDetailsComponent } from './components/security-list/security-details/security-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { SecurityDetailsComponent } from './components/security-list/security-de
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [ SecurityService ],
   bootstrap: [AppComponent]

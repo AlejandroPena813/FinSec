@@ -1,0 +1,9 @@
+.list-container {
+  padding: 24px 24px;
+  width: 96%;
+  border: 1px solid lightgray;
+}
+
+h2 {
+  border-bottom: 1px solid lightgray;
+}

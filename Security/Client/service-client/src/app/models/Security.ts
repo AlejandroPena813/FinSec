@@ -16,6 +16,7 @@ export class Security {
 
     if (data.dailyPrices) {
       for (const price of data.dailyPrices) {
+        console.log('price ' + price.endDayPrice);
         this.dailyPrices.push(price);
       }
     }

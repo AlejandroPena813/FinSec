@@ -1,3 +1,18 @@
-<p>
-  security-details works!
-</p>
+<div class="list-container" style="display: flex; flex-direction: column;">
+  <div fxLayout="row" style="justify-content: space-between">
+    <h2>Security Details</h2>
+    <button type="button" class="btn btn-danger btn-sm" [routerLink]="'/'">Back</button>
+  </div>
+
+  <app-security-card fxLayout="row [wrap]" fxFlex.gt-sm="33%" fxFlex="100%" [security]="security"></app-security-card>
+  <br>  <br>
+  <h3>Prices</h3>
+  <ul class="list-group" *ngIf="security.dailyPrices.length > 0 && security.dailyPrices">
+    <li class="list-group-item" *ngFor="let price of security.dailyPrices">
+      ${{price.endDayPrice}} |
+      {{price.date}}
+    </li>
+  </ul>
+
+  <!--<canvas #donut></canvas>-->
+</div>

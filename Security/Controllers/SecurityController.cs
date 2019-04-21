@@ -42,8 +42,9 @@ namespace Security.Controllers
         {
             try
             {   
+                // NEED Firstordefault. else returns an array not obj.
                 var security = _securityContext.Securities
-                    .Where(sec => sec.Id == id).Include(sec => sec.DailyPrices); //.FindAsync(id);
+                    .Where(sec => sec.Id == id).Include(sec => sec.DailyPrices).FirstOrDefault(); //.FindAsync(id);
                 
                 if ( security == null)
                     return StatusCode(404); // NotFound();

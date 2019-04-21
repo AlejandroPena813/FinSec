@@ -1,6 +1,6 @@
 <div class="list-container"> <!-- todo scrolling or amount, limit height with scrolling or pagination?-->
   <h2>Securities</h2>
   <div fxLayout="row [wrap]">
-    <app-security-card fxFlex.gt-sm="33%" fxFlex="100%" *ngFor="let provider of unselectedProviders" [provider]="provider"></app-security-card>
+    <app-security-card fxFlex.gt-sm="33%" fxFlex="100%" *ngFor="let security of securitiesList" [security]="security"></app-security-card>
   </div>
 </div> <!-- todo features panel w/ sorting & searchinng-->

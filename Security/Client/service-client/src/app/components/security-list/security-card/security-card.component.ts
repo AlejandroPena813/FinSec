@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Security} from '../../../models/Security';
+import { SecurityService } from '../../../services/security.service';
 
 @Component({
   selector: 'app-security-card',
@@ -7,11 +9,23 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SecurityCardComponent implements OnInit {
 
-  @Input() provider; // todo remove, add ': Security' model
+  @Input() security: Security;
 
-  constructor() { }
+  constructor(
+    private securityService: SecurityService
+  ) { }
 
   ngOnInit() {
+  }
+
+  deleteSecurity(id: number) {
+    this.securityService.deleteOneSecurity(id).subscribe( // todo toaster
+      resp => {
+        console.log(`Success: ${resp}`);
+      }, err => {
+        console.log(`Failure: ${err}`);
+      }
+    );
   }
 
 }
