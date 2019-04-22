@@ -51,11 +51,20 @@ export class SecurityService { // todo auth interceptors. use pipe for catchErro
     return this.http.post(this.domain + 'api/security', security); // should do expected return type here post<Type>
   }
 
+  updateSecurity(security) {
+    return this.http.patch(this.domain + 'api/security', security); // should do expected return type here post<Type>
+  }
+
   // Security Prices Below
-  // todo post, patch for sec. all CRUD for secPrices
+  // todo patch for sec. all post/patch for secPrices
 
   deleteOnePrice(id: number) {
     return this.http.delete(this.domain + `api/securityprice/${id}`);
+  }
+
+  // todo issue of non-unique
+  createPrice(price) { // should do type here :Type
+    return this.http.post(this.domain + 'api/securityprice', price); // should do expected return type here post<Type>
   }
 
 }

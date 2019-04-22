@@ -2,6 +2,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { SecurityService } from '../../../services/security.service';
 import {Security} from '../../../models/Security';
+import {FormBuilder, FormGroup, Validators } from '@angular/forms';
 // import Chart from 'chart.js';
 
 @Component({
@@ -12,11 +13,15 @@ import {Security} from '../../../models/Security';
 export class SecurityDetailsComponent implements OnInit {
   // @ViewChild('donut') donut: ElementRef;
   security: Security;
+  form: FormGroup; // exporting the form
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private securityService: SecurityService
-  ) { }
+    private securityService: SecurityService,
+    private formBuilder: FormBuilder
+  ) {
+    this.createForm();
+  }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params) => {
@@ -81,6 +86,48 @@ export class SecurityDetailsComponent implements OnInit {
         console.log(`Failure: ${err}`);
       }
     );
+  }
+
+  // Forms
+  createForm() {
+    this.form = this.formBuilder.group({
+      date: ['', Validators.compose([Validators.required])],
+      endDayPrice: ['', Validators.compose([Validators.required])]
+    });
+  }
+
+  // todo can have loading screen stuff
+
+  // disableForm() {
+  //   this.form.controls['securityName'].disable();
+  //   this.form.controls['isin'].disable();
+  //   this.form.controls['country'].disable();
+  // }
+  //
+  // enableForm() {
+  //   this.form.controls['securityName'].enable();
+  //   this.form.controls['isin'].enable();
+  //   this.form.controls['country'].enable();
+  // }
+
+  onRegisterSubmit() {
+    // this.disableForm();
+
+    const price = {
+      date: this.form.get('date').value,
+      endDayPrice: this.form.get('endDayPrice').value,
+      securityId: this.security.id
+    };
+
+    this.securityService.createPrice(price).subscribe( // toaster, todo need to check for unique!
+      succResp => { // todo success not being read properly. because of srtatus parsing
+        console.log(succResp);
+      }, errResp => {
+        console.log(errResp);
+      }
+    );
+
+    this.form.reset();
   }
 
   // TODO next at least have collapsible form, both sec + prices. Passable Input(patch), or button(POST).

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { SecurityService } from '../../services/security.service';
 import {Security} from '../../models/Security';
 import {FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -13,6 +13,9 @@ export class SecurityListComponent implements OnInit {
   // todo [2X]Sec+SecPrice -need forms for POST/PATCH.
   securitiesList: Security[];
   form: FormGroup; // exporting the form
+  showEdit = false;
+  selectedSecurityId = null;
+  // @ViewChild('clicked') clicked: ElementRef;
 
   constructor(
     private securityService: SecurityService,
@@ -65,9 +68,6 @@ export class SecurityListComponent implements OnInit {
 
   onRegisterSubmit() {
     // this.disableForm();
-    console.log(`Sec Name: ${this.form.get('securityName').value}`);
-    console.log(`ISIN:  ${this.form.get('isin').value}`);
-    console.log(`country: ${this.form.get('country').value}`);
 
     const security = {
       securityName: this.form.get('securityName').value,
@@ -86,5 +86,37 @@ export class SecurityListComponent implements OnInit {
     this.form.reset();
   }
 
+  editSecurity(security) {
+    this.form.reset();
 
+    this.form.patchValue({securityName: security.securityName});
+    this.form.patchValue({isin: security.isin});
+    this.form.patchValue({country: security.country});
+
+    document.getElementById('openCollapse').click();
+
+    this.showEdit = true;
+    this.selectedSecurityId = security.id;
+  }
+
+  submitEdit() {
+    console.log(this.selectedSecurityId);
+
+    const security = {
+      id: this.selectedSecurityId,
+      securityName: this.form.get('securityName').value,
+      isin: this.form.get('isin').value,
+      country: this.form.get('country').value
+    };
+
+    this.securityService.updateSecurity(security).subscribe( // toaster, todo need to check for unique!
+      succResp => {
+        console.log(succResp);
+      }, errResp => {
+        console.log(errResp);
+      }
+    );
+
+    this.form.reset();
+  }
 }

@@ -1,11 +1,10 @@
 <div class="list-container" style="background-color: #F5F5F5"> <!-- todo scrolling or amount, limit height with scrolling or pagination?-->
   <div fxLayout="row" style="justify-content: space-between">
     <h2>Securities</h2>
-    <a class="btn btn-primary btn-sm" style="height: 80%" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">+Security</a>
+    <a class="btn btn-primary btn-sm" style="height: 80%" data-toggle="collapse" id="openCollapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" (click)="showEdit = false; selectedSecurityId = null;">+Security</a>
   </div>
   <div class="collapse" id="collapseExample" style="margin: 5px">
     <div class="card card-body">
-
       <form [formGroup]="form" (submit)="onRegisterSubmit()">
 
         <!-- Security Name Input -->
@@ -48,15 +47,16 @@
         </div>
 
         <!-- Submit Input -->
-        <input [disabled]="!form.valid" type="submit" class="btn btn-primary" value="Submit" />
-
+        <input [disabled]="!form.valid" [hidden]="showEdit" type="submit" class="btn btn-primary btn-sm" value="Submit" />
       </form>
+
+      <button style="margin-left: 5px; width: 100px" class="btn btn-warning btn-sm" *ngIf="showEdit" (click)="submitEdit()">SubmitEdit</button>
 
     </div>
   </div>
+
   <div fxLayout="row [wrap]">
-    <app-security-card fxFlex.gt-sm="33%" fxFlex="100%" *ngFor="let security of securitiesList" [security]="security"></app-security-card>
+    <app-security-card id="card" fxFlex.gt-sm="33%" fxFlex="100%" *ngFor="let security of securitiesList" style="cursor: pointer;" (click)="editSecurity(security); " [security]="security"></app-security-card>
   </div>
 </div> <!-- todo features panel w/ sorting & searchinng-->
-
 
