@@ -1,6 +1,62 @@
-<div class="list-container"> <!-- todo scrolling or amount, limit height with scrolling or pagination?-->
-  <h2>Securities</h2>
+<div class="list-container" style="background-color: #F5F5F5"> <!-- todo scrolling or amount, limit height with scrolling or pagination?-->
+  <div fxLayout="row" style="justify-content: space-between">
+    <h2>Securities</h2>
+    <a class="btn btn-primary btn-sm" style="height: 80%" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">+Security</a>
+  </div>
+  <div class="collapse" id="collapseExample" style="margin: 5px">
+    <div class="card card-body">
+
+      <form [formGroup]="form" (submit)="onRegisterSubmit()">
+
+        <!-- Security Name Input -->
+        <div class="form-group">
+          <label>Security Name</label>
+          <input type="text" name="securityName" class="form-control" autocomplete="off" placeholder="*securityName" formControlName="securityName"  />
+          <div [ngClass]="{'alert-danger': (form.controls.securityName.errors && form.controls.securityName.dirty) , 'alert-success': !form.controls.securityName.errors}">
+            <!-- Validation -->
+            <ul class="help-block">
+              <li *ngIf="form.controls.securityName.errors?.required && form.controls.securityName.dirty">This field is required</li>
+              <li *ngIf="form.controls.securityName.errors?.minlength && form.controls.securityName.dirty || form.controls.securityName.errors?.maxlength && form.controls.securityName.dirty ">Minimum characters: 1, Maximum characters: 12</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ISIN Input -->
+        <div class="form-group">
+          <label>ISIN</label>
+          <input type="text" name="isin" class="form-control" autocomplete="off" placeholder="*ISIN" formControlName="isin"/>
+          <div [ngClass]="{'alert-danger': (form.controls.isin.errors && form.controls.isin.dirty), 'alert-success': !form.controls.isin.errors}">
+            <!-- Validation -->
+            <ul class="help-block">
+              <li *ngIf="form.controls.isin.errors?.required && form.controls.isin.dirty">This field is required</li>
+              <li *ngIf="(form.controls.isin.errors?.minlength && form.controls.isin.dirty || form.controls.isin.errors?.maxlength && form.controls.isin.dirty ) && form.controls.isin.dirty">ISIN is 12 digits</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Country Input -->
+        <div class="form-group">
+          <label>Country</label>
+          <input type="country" name="country" class="form-control" autocomplete="off" placeholder="*Country" formControlName="country" />
+          <div [ngClass]="{'alert-danger': (form.controls.country.errors && form.controls.country.dirty), 'alert-success': !form.controls.country.errors}">
+            <!-- Validation -->
+            <ul class="help-block">
+              <li *ngIf="form.controls.country.errors?.required && form.controls.country.dirty">This field is required</li>
+              <li *ngIf="form.controls.country.errors?.minlength && form.controls.country.dirty || form.controls.country.errors?.maxlength && form.controls.country.dirty ">Minimum characters: 1, Maximum characters: 25</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Submit Input -->
+        <input [disabled]="!form.valid" type="submit" class="btn btn-primary" value="Submit" />
+
+      </form>
+
+    </div>
+  </div>
   <div fxLayout="row [wrap]">
     <app-security-card fxFlex.gt-sm="33%" fxFlex="100%" *ngFor="let security of securitiesList" [security]="security"></app-security-card>
   </div>
 </div> <!-- todo features panel w/ sorting & searchinng-->
+
+

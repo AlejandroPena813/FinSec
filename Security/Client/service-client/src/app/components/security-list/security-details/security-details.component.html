@@ -1,4 +1,4 @@
-<div class="list-container" style="display: flex; flex-direction: column;">
+<div class="list-container" style="display: flex; flex-direction: column; background-color: #F5F5F5">
   <div fxLayout="row" style="justify-content: space-between">
     <h2>Security Details</h2>
     <button type="button" class="btn btn-danger btn-sm" [routerLink]="'/'">Back</button>
@@ -11,6 +11,7 @@
     <li class="list-group-item" *ngFor="let price of security.dailyPrices">
       ${{price.endDayPrice}} |
       {{price.date}}
+      <button type="button" class="btn btn-danger btn-sm" style="height: 80%; float: right" (click)="deletePrice(price.id)">x</button>
     </li>
   </ul>
 

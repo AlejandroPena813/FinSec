@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; // MUST IMPORT HTTPCLIENT MODULE
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators'; // handle error cases w toasters
+import { catchError, retry } from 'rxjs/operators';
+import { Security } from '../models/Security'; // handle error cases w toasters
 
 @Injectable({
   providedIn: 'root' // ?
@@ -33,6 +34,7 @@ export class SecurityService { // todo auth interceptors. use pipe for catchErro
    * }
    */
 
+  // Securities
   getSecurities() {
     return this.http.get(this.domain + 'api/security');
   }
@@ -41,22 +43,19 @@ export class SecurityService { // todo auth interceptors. use pipe for catchErro
     return this.http.get(this.domain + `api/security/${id}`);
   }
 
-  deleteOneSecurity(id: number) {
+  deleteOneSecurity(id: number) { // TODO ISSUES, SUCCESS BUT FAILURE SHOWS. 200 HTTP
     return this.http.delete(this.domain + `api/security/${id}`);
   }
 
+  createSecurity(security) { // should do type here :Type
+    return this.http.post(this.domain + 'api/security', security); // should do expected return type here post<Type>
+  }
+
+  // Security Prices Below
   // todo post, patch for sec. all CRUD for secPrices
 
-  // registerUser(user) {
-  //   return this.http.post(this.domain + '/api/authentication/register', user); // .pipe();
-  // should do expected return type here post<Type>
-  // }
+  deleteOnePrice(id: number) {
+    return this.http.delete(this.domain + `api/securityprice/${id}`);
+  }
 
-  // checkUsername(username) {
-  //   return this.http.get(this.domain + `/api/authentication/checkUsername/${username}`);
-  // }
-  //
-  // checkEmail(email) {
-  //   return this.http.get(this.domain + `/api/authentication/checkEmail/${email}`);
-  // }
 }

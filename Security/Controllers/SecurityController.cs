@@ -60,7 +60,7 @@ namespace Security.Controllers
         [HttpPost]
         public async Task<IActionResult> PostSecurity([FromBody] Models.Security newSecurity)
         {   // could turn this into function in service file--> reusable. Can receive array of prices, but shouldnt
-            if (String.IsNullOrEmpty(newSecurity.SecurityName)) 
+            if (String.IsNullOrEmpty(newSecurity.SecurityName)) // todo these checks need to be better
                 return StatusCode(400, "Must provide security name.");
             if (String.IsNullOrEmpty(newSecurity.ISIN)) 
                 return StatusCode(400, "Must provide 12 digit security ISIN.");

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SecurityService } from '../../services/security.service';
 import {Security} from '../../models/Security';
+import {FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-security-list',
@@ -9,14 +10,16 @@ import {Security} from '../../models/Security';
   providers: [SecurityService]
 })
 export class SecurityListComponent implements OnInit {
-  // todo [2X]Sec+SecPrice -need forms for POST/PATCH. Delete button/service call
-  // todo work on getAllSecurity. Then getSingleSec for details.
-
+  // todo [2X]Sec+SecPrice -need forms for POST/PATCH.
   securitiesList: Security[];
+  form: FormGroup; // exporting the form
 
   constructor(
-    private securityService: SecurityService
-  ) { }
+    private securityService: SecurityService,
+    private formBuilder: FormBuilder
+  ) {
+    this.createForm();
+  }
 
   ngOnInit() {
     // todo could add toasters for err/succ
@@ -26,5 +29,62 @@ export class SecurityListComponent implements OnInit {
       console.log('Error getting all sec' + errRep); // toaster
     });
   }
+
+  // Forms
+  createForm() {
+    this.form = this.formBuilder.group({
+      securityName: ['', Validators.compose([ // compose allows array of validators
+          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(25), // todo extend this in front/back
+        ])],
+      isin: ['', Validators.compose([
+          Validators.required,
+          Validators.minLength(12),
+          Validators.maxLength(12),
+        ])],
+      country: ['', Validators.compose([
+          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(25)
+        ])]
+      });
+  }
+
+  disableForm() {
+    this.form.controls['securityName'].disable();
+    this.form.controls['isin'].disable();
+    this.form.controls['country'].disable();
+  }
+
+  enableForm() {
+    this.form.controls['securityName'].enable();
+    this.form.controls['isin'].enable();
+    this.form.controls['country'].enable();
+  }
+
+  onRegisterSubmit() {
+    // this.disableForm();
+    console.log(`Sec Name: ${this.form.get('securityName').value}`);
+    console.log(`ISIN:  ${this.form.get('isin').value}`);
+    console.log(`country: ${this.form.get('country').value}`);
+
+    const security = {
+      securityName: this.form.get('securityName').value,
+      isin: this.form.get('isin').value,
+      country: this.form.get('country').value
+    };
+
+    this.securityService.createSecurity(security).subscribe( // toaster, todo need to check for unique!
+      succResp => {
+        console.log(succResp);
+      }, errResp => {
+        console.log(errResp);
+      }
+    );
+
+    this.form.reset();
+  }
+
 
 }

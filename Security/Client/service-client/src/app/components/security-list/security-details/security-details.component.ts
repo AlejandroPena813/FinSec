@@ -73,4 +73,16 @@ export class SecurityDetailsComponent implements OnInit {
 
   }
 
+  deletePrice(id: number) { // todo reload lists after delete. sec and prices.
+    this.securityService.deleteOnePrice(id).subscribe( // todo toaster
+      resp => {
+        console.log(`Success: ${resp}`);
+      }, err => {
+        console.log(`Failure: ${err}`);
+      }
+    );
+  }
+
+  // TODO next at least have collapsible form, both sec + prices. Passable Input(patch), or button(POST).
+
 }
