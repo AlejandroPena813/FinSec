@@ -8,8 +8,8 @@
   <br> <br>
   <div fxLayout="row" style="justify-content: space-between">
     <h3>Prices</h3>
-    <a class="btn btn-primary btn-sm" style="height: 80%" data-toggle="collapse" href="#collapseExample" role="button"
-       aria-expanded="false" aria-controls="collapseExample">+Price</a>
+    <a class="btn btn-primary btn-sm" style="height: 80%" data-toggle="collapse" id="openCollapse" href="#collapseExample" role="button"
+       aria-expanded="false" aria-controls="collapseExample" (click)="showEdit = false; selectedPriceId = null;">+Price</a>
   </div>
 
   <div class="collapse" id="collapseExample" style="margin: 5px">
@@ -41,14 +41,17 @@
         </div>
 
         <!-- Submit Input -->
-        <input [disabled]="!form.valid" type="submit" class="btn btn-primary" value="Submit" />
+        <input [disabled]="!form.valid" [hidden]="showEdit" type="submit" class="btn btn-primary btn-sm" value="Submit" />
 
       </form>
+
+      <button [disabled]="!form.valid" style="margin-left: 5px; width: 100px" class="btn btn-warning btn-sm" *ngIf="showEdit" (click)="submitEdit()">SubmitEdit</button>
+
     </div>
   </div>
 
   <ul class="list-group" *ngIf="security.dailyPrices.length > 0 && security.dailyPrices">
-    <li class="list-group-item" *ngFor="let price of security.dailyPrices">
+    <li class="list-group-item" style="cursor: pointer;" (click)="editPrice(price); " *ngFor="let price of security.dailyPrices">
       ${{price.endDayPrice}} |
       {{price.date}}
       <button type="button" class="btn btn-danger btn-sm" style="height: 80%; float: right" (click)="deletePrice(price.id)">x</button>

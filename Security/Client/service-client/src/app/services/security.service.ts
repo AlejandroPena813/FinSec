@@ -67,4 +67,7 @@ export class SecurityService { // todo auth interceptors. use pipe for catchErro
     return this.http.post(this.domain + 'api/securityprice', price); // should do expected return type here post<Type>
   }
 
+  updatePrice(price) {
+    return this.http.patch(this.domain + 'api/securityprice', price); // should do expected return type here post<Type>
+  }
 }

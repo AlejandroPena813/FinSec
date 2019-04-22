@@ -14,6 +14,8 @@ export class SecurityDetailsComponent implements OnInit {
   // @ViewChild('donut') donut: ElementRef;
   security: Security;
   form: FormGroup; // exporting the form
+  showEdit = false;
+  selectedPriceId = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -128,6 +130,40 @@ export class SecurityDetailsComponent implements OnInit {
     );
 
     this.form.reset();
+  }
+
+  editPrice(price) {
+    this.form.reset();
+
+    this.form.patchValue({date: price.date});
+    this.form.patchValue({endDayPrice: price.endDayPrice});
+
+
+    document.getElementById('openCollapse').click();
+
+    this.showEdit = true;
+    this.selectedPriceId = price.id;
+  }
+
+  submitEdit() {
+    console.log(this.selectedPriceId + '  ' + this.form.get('date').value);
+
+    const price = {
+      id: this.selectedPriceId,
+      date: this.form.get('date').value,
+      endDayPrice: this.form.get('endDayPrice').value
+    };
+
+    this.securityService.updatePrice(price).subscribe( // toaster, todo need to check for unique!
+      succResp => {
+        console.log(succResp);
+      }, errResp => {
+        console.log(errResp);
+      }
+    );
+
+    this.form.reset();
+    document.getElementById('openCollapse').click();
   }
 
   // TODO next at least have collapsible form, both sec + prices. Passable Input(patch), or button(POST).

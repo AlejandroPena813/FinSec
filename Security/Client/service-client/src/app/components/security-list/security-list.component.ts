@@ -118,5 +118,6 @@ export class SecurityListComponent implements OnInit {
     );
 
     this.form.reset();
+    document.getElementById('openCollapse').click();
   }
 }

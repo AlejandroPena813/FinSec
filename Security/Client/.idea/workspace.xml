@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4d8ad23-7bf4-4927-9088-be7ae043da4c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-client/src/app/components/security-list/security-card/security-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-client/src/app/components/security-list/security-card/security-card.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-client/src/app/components/security-list/security-details/security-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-client/src/app/components/security-list/security-details/security-details.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-client/src/app/components/security-list/security-details/security-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service-client/src/app/components/security-list/security-details/security-details.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-client/src/app/components/security-list/security-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-client/src/app/components/security-list/security-list.component.html" afterDir="false" />
@@ -37,16 +35,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1228" />
+          <entry key="html" value="1245" />
           <entry key="json" value="3" />
-          <entry key="ts" value="4141" />
+          <entry key="ts" value="4163" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1228" />
+          <entry key="HTML" value="1245" />
           <entry key="JSON" value="3" />
-          <entry key="TypeScript" value="4141" />
+          <entry key="TypeScript" value="4163" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -97,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service-client/src/app/components/security-list/security-list.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="108" column="45" lean-forward="true" selection-start-line="108" selection-start-column="45" selection-end-line="108" selection-end-column="45" />
+            <state relative-caret-position="539">
+              <caret line="120" column="52" lean-forward="true" selection-start-line="120" selection-start-column="52" selection-end-line="120" selection-end-column="52" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -109,13 +107,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service-client/src/app/components/security-list/security-list.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+            <state relative-caret-position="262">
+              <caret line="50" column="13" lean-forward="true" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#app-security-card#0;n#div#2;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -125,8 +124,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service-client/src/app/services/security.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="525">
+              <caret line="69" column="13" selection-start-line="69" selection-start-column="2" selection-end-line="69" selection-end-column="13" />
               <folding>
                 <element signature="e#295#346#0" expanded="true" />
               </folding>
@@ -137,14 +136,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service-client/src/app/components/security-list/security-details/security-details.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-285">
-              <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="72" />
+            <state relative-caret-position="313">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -154,11 +155,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service-client/src/app/components/security-list/security-details/security-details.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="122" column="87" lean-forward="true" selection-start-line="122" selection-start-column="87" selection-end-line="122" selection-end-column="87" />
+            <state relative-caret-position="394">
+              <caret line="162" column="6" lean-forward="true" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="6" />
               <folding>
                 <element signature="e#0#71#0" expanded="true" />
-                <element signature="e#1303#1365#0" />
               </folding>
             </state>
           </provider>
@@ -185,18 +185,21 @@
       <find>form</find>
       <find>name</find>
       <find>usernameValid</find>
-      <find>isin</find>
       <find>ngclass</find>
       <find>fileinp</find>
       <find>collapseExample</find>
       <find>http</find>
-      <find>password</find>
-      <find>processing</find>
       <find>read</find>
+      <find>processing</find>
+      <find>password</find>
+      <find>isin</find>
+      <find>selectedSecurityId</find>
+      <find>card</find>
     </findStrings>
     <replaceStrings>
       <replace>dailyPrices</replace>
       <replace>'</replace>
+      <replace>selectedPriceId</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -217,10 +220,10 @@
         <option value="$PROJECT_DIR$/service-client/src/app/components/security-list/security-card/security-card.component.ts" />
         <option value="$PROJECT_DIR$/service-client/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/service-client/src/app/components/security-list/security-card/security-card.component.html" />
-        <option value="$PROJECT_DIR$/service-client/src/app/components/security-list/security-details/security-details.component.html" />
         <option value="$PROJECT_DIR$/service-client/src/app/components/security-list/security-list.component.html" />
-        <option value="$PROJECT_DIR$/service-client/src/app/services/security.service.ts" />
+        <option value="$PROJECT_DIR$/service-client/src/app/components/security-list/security-details/security-details.component.html" />
         <option value="$PROJECT_DIR$/service-client/src/app/components/security-list/security-list.component.ts" />
+        <option value="$PROJECT_DIR$/service-client/src/app/services/security.service.ts" />
         <option value="$PROJECT_DIR$/service-client/src/app/components/security-list/security-details/security-details.component.ts" />
       </list>
     </option>
@@ -372,12 +375,12 @@
       <option name="presentableId" value="Default" />
       <updated>1555780608647</updated>
       <workItem from="1555780610060" duration="23535000" />
-      <workItem from="1555869362116" duration="12260000" />
+      <workItem from="1555869362116" duration="14090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35795000" />
+    <option name="totallyTimeSpent" value="37625000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -549,55 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-client/src/app/components/security-list/security-details/security-details.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285">
-          <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="72" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-client/src/app/services/security.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="e#295#346#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-client/src/app/components/security-list/security-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#app-security-card#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-client/src/app/components/security-list/security-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="108" column="45" lean-forward="true" selection-start-line="108" selection-start-column="45" selection-end-line="108" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service-client/src/app/components/security-list/security-card/security-card.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
@@ -608,13 +562,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/service-client/src/app/components/security-list/security-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="50" column="13" lean-forward="true" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#app-security-card#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-client/src/app/components/security-list/security-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="120" column="52" lean-forward="true" selection-start-line="120" selection-start-column="52" selection-end-line="120" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-client/src/app/components/security-list/security-details/security-details.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-client/src/app/services/security.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="69" column="13" selection-start-line="69" selection-start-column="2" selection-end-line="69" selection-end-column="13" />
+          <folding>
+            <element signature="e#295#346#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/service-client/src/app/components/security-list/security-details/security-details.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="122" column="87" lean-forward="true" selection-start-line="122" selection-start-column="87" selection-end-line="122" selection-end-column="87" />
+        <state relative-caret-position="394">
+          <caret line="162" column="6" lean-forward="true" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="6" />
           <folding>
             <element signature="e#0#71#0" expanded="true" />
-            <element signature="e#1303#1365#0" />
           </folding>
         </state>
       </provider>
